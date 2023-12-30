@@ -38,12 +38,12 @@ app.use("/", timeSlot);
 app.use("/appointment", AppointmentRouter);
 
 // Start the server
-app.listen(27107, async () => {
+app.listen(port, async () => {
     try {
         await connection;
         console.log("Connected to the database");
     } catch (error) {
         console.log("Error while connecting to the database");
     }
-    console.log("Server Running on port " + process.env.PORT);
+    console.log("Server Running on port " + port);
 });
